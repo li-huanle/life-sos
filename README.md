@@ -33,3 +33,8 @@ python3 -I tools/build_data.py _upstream_data/htlb.json
 - [ ] 注册小程序，确认个人主体可选的服务类目；`medical: true` 的场景视审核结果开关
 - [ ] 小程序备案
 - [ ] 向上游 `衍生项目.md` 提 PR（写明出处和许可）
+
+## 许可
+
+- 代码：MIT（见 `LICENSE`）
+- 内容（`miniprogram/data/content.js`）：来自《高性价比人生指南》，作者 [eternity4719](https://github.com/eternity4719)，[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)。本项目对原文做了挑选、排序和格式调整，未改动建议内容。
