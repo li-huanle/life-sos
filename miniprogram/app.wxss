@@ -30,3 +30,6 @@ page {
 .tag.B { background: #fef6e1; color: #92400e; }
 .tag.C { background: #fdecec; color: #991b1b; }
 .footer-note { text-align: center; color: #a3a3a3; font-size: 22rpx; padding: 32rpx 0; }
+/* style v2 下 button 默认宽 184px 且 ::after 带一圈边框，统一抹掉 */
+button { width: auto !important; }
+button::after { border: none; }
