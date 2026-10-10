@@ -20,4 +20,9 @@ function search(keyword) {
   )
 }
 
-module.exports = { meta: data.meta, scenes, getScene, getItem, search }
+// 首页两种分组：categories 按场景类型，stages 按人生阶段
+function getGroups(mode) {
+  return mode === 'stage' ? data.stages : data.categories
+}
+
+module.exports = { meta: data.meta, scenes, getScene, getItem, getGroups, search }

@@ -1,13 +1,25 @@
 <view class="container">
   <view class="search-bar" bindtap="openSearch">🔍 搜一搜，比如「押金」「N+1」</view>
-  <view class="hint muted">遇到事了，点进去照着做</view>
-  <view class="grid">
-    <view wx:for="{{scenes}}" wx:key="key" class="scene card" data-key="{{item.key}}" bindtap="openScene">
-      <view class="icon">{{item.icon}}</view>
-      <view class="title">{{item.title}}</view>
-      <view class="muted">{{item.subtitle}}</view>
-      <view wx:if="{{item.done}}" class="progress">已做 {{item.done}}/{{item.total}}</view>
+
+  <view class="switch">
+    <view class="seg {{mode === 'category' ? 'on' : ''}}" data-mode="category" bindtap="switchMode">按场景</view>
+    <view class="seg {{mode === 'stage' ? 'on' : ''}}" data-mode="stage" bindtap="switchMode">按人生阶段</view>
+  </view>
+
+  <view wx:for="{{groups}}" wx:for-item="group" wx:key="key" class="group">
+    <view class="group-head">
+      <text class="group-title">{{group.title}}</text>
+      <text wx:if="{{group.desc}}" class="muted group-desc">{{group.desc}}</text>
+    </view>
+    <view class="grid">
+      <view wx:for="{{group.scenes}}" wx:key="key" class="scene card" data-key="{{item.key}}" bindtap="openScene">
+        <view class="icon">{{item.icon}}</view>
+        <view class="title">{{item.title}}</view>
+        <view class="muted">{{item.subtitle}}</view>
+        <view wx:if="{{item.done}}" class="progress">已做 {{item.done}}/{{item.total}}</view>
+      </view>
     </view>
   </view>
+
   <view class="footer-note">内容来自《高性价比人生指南》· CC BY 4.0 · 仅供参考</view>
 </view>

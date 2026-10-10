@@ -60,6 +60,23 @@ def main(argv):
             steps.append({"stage": step["stage"], "ids": step["ids"]})
         scenes.append({k: scene[k] for k in ("key", "title", "subtitle", "icon", "medical")} | {"steps": steps})
 
+    enabled = {s["key"] for s in scenes}
+    groups = {}
+    for kind in ("categories", "stages"):
+        groups[kind] = []
+        grouped = set()
+        for g in config.get(kind, []):
+            unknown = [k for k in g["scenes"] if k not in {s["key"] for s in config["scenes"]}]
+            if unknown:
+                errors.append(f"[{kind}/{g['key']}] 没有这些场景：{', '.join(unknown)}")
+            keys = [k for k in g["scenes"] if k in enabled]
+            grouped.update(keys)
+            if keys:  # 场景全被关掉的分组不显示
+                groups[kind].append({**{k: v for k, v in g.items() if k != "scenes"}, "scenes": keys})
+        orphans = enabled - grouped
+        if orphans:
+            errors.append(f"[{kind}] 这些场景没放进任何分组，首页会看不到：{', '.join(sorted(orphans))}")
+
     new_ids = sorted(set(used) - set(lock), key=lambda s: tuple(map(int, s.split("-"))))
     if new_ids and not update_lock:
         errors.append("这些 id 还没锁定标题，核对后用 --update-lock：" + ", ".join(new_ids))
@@ -82,6 +99,8 @@ def main(argv):
             "source_repo": dataset["meta"].get("source_repo"),
         },
         "scenes": scenes,
+        "categories": groups["categories"],
+        "stages": groups["stages"],
         "items": items,
     }
     print(f"{len(scenes)} 个场景，{len(items)} 条，上游 {payload['meta']['upstream_commit'][:7]}")

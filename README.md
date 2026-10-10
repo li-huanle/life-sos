@@ -5,7 +5,7 @@
 ## 目录
 
 ```
-scenes.config.json        场景 → 条目映射（改场景只改这里）
+scenes.config.json        场景 → 条目映射，以及首页两种分组（categories 按场景 / stages 按人生阶段）
 tools/build_data.py       把 htlb-dataset 裁成 miniprogram/data/content.js
 tools/scenes.lock.json    锁定每个 id 对应的标题，防止上游编号漂移
 miniprogram/              小程序本体（原生）
