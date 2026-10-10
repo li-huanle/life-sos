@@ -1,0 +1,4 @@
+_upstream_data/
+node_modules/
+project.private.config.json
+.DS_Store

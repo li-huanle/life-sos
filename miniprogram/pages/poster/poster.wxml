@@ -1,0 +1,4 @@
+<view class="wrap">
+  <canvas type="2d" id="poster" class="poster" style="height: {{height}}rpx"></canvas>
+  <button wx:if="{{ready}}" class="save" bindtap="save">保存到相册</button>
+</view>

@@ -1,0 +1,46 @@
+<view class="container" wx:if="{{item}}">
+  <view class="card">
+    <view class="title">{{item.title}}</view>
+    <view class="tags">
+      <text class="tag {{item.evidence}}">证据 {{item.evidence}}</text>
+      <text class="tag">性价比{{item.ratio}}</text>
+      <text wx:if="{{item.disputed}}" class="tag C">有争议</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="label">说人话</view>
+    <view>{{item.plain}}</view>
+  </view>
+
+  <view class="card" wx:if="{{item.cost_text}}">
+    <view class="label">要花什么</view>
+    <view>{{item.cost_text}}</view>
+  </view>
+
+  <view class="card" wx:if="{{item.benefit_text}}">
+    <view class="label">换回什么</view>
+    <view class="muted">{{item.benefit_text}}</view>
+  </view>
+
+  <view class="card" wx:if="{{item.note}}">
+    <view class="label">备注</view>
+    <view class="muted">{{item.note}}</view>
+  </view>
+
+  <view class="card" wx:if="{{item.sources.length}}">
+    <view class="label">出处（点击复制链接）</view>
+    <view wx:for="{{item.sources}}" wx:key="*this" wx:for-item="url"
+          class="source" data-url="{{url}}" bindtap="copySource">{{url}}</view>
+  </view>
+
+  <view class="footer-note">
+    原文：《高性价比人生指南》第 {{item.section}} 节「{{item.section_title}}」· 作者 eternity4719 · CC BY 4.0 · 经改编
+  </view>
+
+  <view class="bar">
+    <view class="bar-btn" bindtap="toggleFav">{{fav ? '★ 已收藏' : '☆ 收藏'}}</view>
+    <view class="bar-btn" bindtap="makePoster">生成图片</view>
+    <button class="bar-btn primary" open-type="share">转发</button>
+  </view>
+</view>

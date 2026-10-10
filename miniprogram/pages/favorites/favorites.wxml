@@ -1,0 +1,7 @@
+<view class="container">
+  <view wx:for="{{list}}" wx:key="id" class="card" data-id="{{item.id}}" bindtap="openItem">
+    <view class="title">{{item.title}}</view>
+    <view class="muted">{{item.section_title}}</view>
+  </view>
+  <view wx:if="{{!list.length}}" class="footer-note">还没有收藏。在条目页点「☆ 收藏」。</view>
+</view>

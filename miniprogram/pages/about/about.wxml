@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="card">
+    <view class="h">这是什么</view>
+    <view>把《高性价比人生指南》里「出了事该怎么办」的建议，按场景和先后顺序重新排成清单。</view>
+  </view>
+  <view class="card">
+    <view class="h">内容出处与许可</view>
+    <view>原作：《高性价比人生指南》（HowToLiveBetter），作者 eternity4719。</view>
+    <view>许可：知识共享 署名 4.0 国际（CC BY 4.0）。</view>
+    <view>本小程序对原文做了挑选、排序和格式调整，未改动建议内容。</view>
+    <view class="link" bindtap="copyRepo">{{repo}}（点击复制）</view>
+    <view class="muted">数据版本：上游 {{commit}}，同步于 {{syncedAt}}</view>
+  </view>
+  <view class="card">
+    <view class="h">请注意</view>
+    <view class="muted">内容可能过时或有错，不少政策各地执行不一样。真去办事、看病、打官司时，以当地部门、医生和律师的说法为准。本小程序不是官方作品，与原作者无关。</view>
+  </view>
+</view>

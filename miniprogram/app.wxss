@@ -1,0 +1,32 @@
+page {
+  --accent: #c2410c;
+  --text: #1f1f1f;
+  --muted: #6b6b6b;
+  --card: #ffffff;
+  --line: #ebebe8;
+  background: #f6f6f4;
+  color: var(--text);
+  font-size: 30rpx;
+  line-height: 1.6;
+}
+.container { padding: 24rpx 32rpx 48rpx; }
+.card {
+  background: var(--card);
+  border-radius: 20rpx;
+  padding: 28rpx 32rpx;
+  margin-bottom: 20rpx;
+}
+.muted { color: var(--muted); font-size: 26rpx; }
+.tag {
+  display: inline-block;
+  font-size: 22rpx;
+  padding: 2rpx 14rpx;
+  border-radius: 8rpx;
+  margin-right: 10rpx;
+  background: #f1f1ee;
+  color: var(--muted);
+}
+.tag.A { background: #e7f5ec; color: #166534; }
+.tag.B { background: #fef6e1; color: #92400e; }
+.tag.C { background: #fdecec; color: #991b1b; }
+.footer-note { text-align: center; color: #a3a3a3; font-size: 22rpx; padding: 32rpx 0; }

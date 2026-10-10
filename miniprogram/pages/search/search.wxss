@@ -1,0 +1,2 @@
+.input { background: #fff; border-radius: 40rpx; padding: 16rpx 32rpx; margin-bottom: 24rpx; }
+.title { font-weight: 600; }

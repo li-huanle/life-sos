@@ -1,0 +1,8 @@
+<view class="container">
+  <input class="input" focus placeholder="比如：押金、失业金、盗刷" value="{{keyword}}" bindinput="onInput" />
+  <view wx:for="{{results}}" wx:key="id" class="card" data-id="{{item.id}}" bindtap="openItem">
+    <view class="title">{{item.title}}</view>
+    <view class="muted">{{item.section_title}}</view>
+  </view>
+  <view wx:if="{{searched && !results.length}}" class="footer-note">没找到。目前只收录了首页场景里的条目。</view>
+</view>

@@ -1,0 +1,27 @@
+<view class="container" wx:if="{{scene}}">
+  <view class="head">
+    <view class="sub muted">{{scene.subtitle}} · 已做 {{doneCount}}/{{total}}</view>
+    <view wx:if="{{scene.medical}}" class="warn">涉及身体状况的，以医生的判断为准</view>
+  </view>
+
+  <block wx:for="{{steps}}" wx:for-item="step" wx:key="stage">
+    <view class="stage">{{step.stage}}</view>
+    <view wx:for="{{step.items}}" wx:key="id" class="card row {{done[item.id] ? 'is-done' : ''}}">
+      <view class="check" data-id="{{item.id}}" catchtap="toggle">{{done[item.id] ? '✓' : ''}}</view>
+      <view class="body" data-id="{{item.id}}" bindtap="openItem">
+        <view class="title">{{item.title}}</view>
+        <view class="muted plain">{{item.plain}}</view>
+        <view>
+          <text class="tag {{item.evidence}}">证据 {{item.evidence}}</text>
+          <text class="tag">性价比{{item.ratio}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="actions">
+    <button open-type="share" class="share-btn">转给需要的人</button>
+    <view class="muted reset" bindtap="reset">清空打勾</view>
+  </view>
+  <view class="footer-note">内容来自《高性价比人生指南》· CC BY 4.0 · 经改编，各地执行可能不同</view>
+</view>

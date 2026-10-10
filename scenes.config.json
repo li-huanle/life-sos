@@ -1,0 +1,120 @@
+{
+  "_comment": "场景 → 条目映射。id 对应 htlb-dataset 的 item.id（节号-条号）。medical=true 的场景涉及医疗信息，提审前确认类目，必要时把 enabled 设为 false。",
+  "scenes": [
+    {
+      "key": "laid-off",
+      "title": "被裁了",
+      "subtitle": "先别签字，先算钱",
+      "icon": "💼",
+      "enabled": true,
+      "medical": false,
+      "steps": [
+        { "stage": "谈话当天", "ids": ["19-7", "19-8", "19-4", "19-5", "19-6"] },
+        { "stage": "离职时", "ids": ["19-17", "19-18", "8-19"] },
+        { "stage": "离职后一个月内", "ids": ["7-1", "7-12", "7-13", "7-18", "19-19"] }
+      ]
+    },
+    {
+      "key": "scammed",
+      "title": "被骗了",
+      "subtitle": "转账后的黄金时间",
+      "icon": "🚨",
+      "enabled": true,
+      "medical": false,
+      "steps": [
+        { "stage": "立刻", "ids": ["8-2", "8-22", "8-32"] },
+        { "stage": "报警之后", "ids": ["8-39", "8-42"] },
+        { "stage": "以后防住", "ids": ["8-3", "8-4", "8-45", "8-8"] }
+      ]
+    },
+    {
+      "key": "phone-lost",
+      "title": "手机丢了 / 卡被盗刷",
+      "subtitle": "按顺序挂失冻结",
+      "icon": "📱",
+      "enabled": true,
+      "medical": false,
+      "steps": [
+        { "stage": "立刻", "ids": ["14-4", "14-5"] },
+        { "stage": "当天", "ids": ["7-11", "8-9"] },
+        { "stage": "换新手机后", "ids": ["14-1", "14-3", "14-2", "14-6"] }
+      ]
+    },
+    {
+      "key": "unpaid-wages",
+      "title": "被欠薪",
+      "subtitle": "两条免费的路",
+      "icon": "💰",
+      "enabled": true,
+      "medical": false,
+      "steps": [
+        { "stage": "先做", "ids": ["19-8", "7-22", "7-2"] },
+        { "stage": "要钱", "ids": ["19-1", "7-3", "8-19"] }
+      ]
+    },
+    {
+      "key": "renting",
+      "title": "租房出纠纷",
+      "subtitle": "押金、断电、被赶",
+      "icon": "🏠",
+      "enabled": true,
+      "medical": false,
+      "steps": [
+        { "stage": "正在被赶", "ids": ["15-2", "15-5", "8-41"] },
+        { "stage": "押金和钱", "ids": ["15-1", "15-3", "15-4"] },
+        { "stage": "下次签约前", "ids": ["15-6", "15-8"] }
+      ]
+    },
+    {
+      "key": "car-accident",
+      "title": "出了交通事故",
+      "subtitle": "停车、救人、报警",
+      "icon": "🚗",
+      "enabled": true,
+      "medical": false,
+      "steps": [
+        { "stage": "现场", "ids": ["8-1", "8-42", "24-7"] },
+        { "stage": "之后", "ids": ["8-41", "8-19"] }
+      ]
+    },
+    {
+      "key": "family-death",
+      "title": "家人去世",
+      "subtitle": "要办的事按顺序来",
+      "icon": "🕯️",
+      "enabled": true,
+      "medical": false,
+      "steps": [
+        { "stage": "当天", "ids": ["25-1", "25-2", "25-4", "25-3"] },
+        { "stage": "办丧事", "ids": ["25-6", "25-7", "25-8"] },
+        { "stage": "之后", "ids": ["25-5", "25-9", "25-10", "19-15"] }
+      ]
+    },
+    {
+      "key": "chronic",
+      "title": "刚确诊慢性病",
+      "subtitle": "先把医保办对",
+      "icon": "🩺",
+      "enabled": true,
+      "medical": true,
+      "steps": [
+        { "stage": "头一周", "ids": ["16-1", "16-4", "16-2"] },
+        { "stage": "头三个月", "ids": ["16-5", "16-6", "16-3"] },
+        { "stage": "长期", "ids": ["16-7", "7-10"] }
+      ]
+    },
+    {
+      "key": "newborn",
+      "title": "孩子要出生了",
+      "subtitle": "出院前后要办的证",
+      "icon": "👶",
+      "enabled": true,
+      "medical": true,
+      "steps": [
+        { "stage": "怀孕时", "ids": ["27-11", "27-2"] },
+        { "stage": "出院前", "ids": ["27-12", "27-13", "20-2", "20-7"] },
+        { "stage": "出生一个月内", "ids": ["27-14", "27-15", "20-1"] }
+      ]
+    }
+  ]
+}

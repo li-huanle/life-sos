@@ -1,0 +1,36 @@
+name: 同步上游内容
+
+on:
+  schedule:
+    - cron: '0 3 * * *'   # 北京时间 11:00，上游数据集在 09:45 左右更新
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 拉取 htlb-dataset
+        run: |
+          mkdir -p _upstream_data
+          curl -fsSL -o _upstream_data/htlb.json https://raw.githubusercontent.com/sin0317/htlb-dataset/main/data/htlb.json
+      # 条目编号漂移时这一步会失败，需要人工核对 scenes.config.json 后用 --update-lock
+      - name: 构建 content.js
+        run: python3 -I tools/build_data.py _upstream_data/htlb.json
+      - name: 有变化就提交
+        run: |
+          if git diff --quiet miniprogram/data/content.js; then
+            echo "内容没变"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add miniprogram/data/content.js
+          git commit -m "chore: 同步上游内容"
+          git push
