@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 3 * * *'   # 北京时间 11:00，上游数据集在 09:45 左右更新
   workflow_dispatch:
+  push:
+    paths:                # 改了场景映射或构建脚本，也跑一遍校验和构建
+      - scenes.config.json
+      - tools/**
 
 permissions:
   contents: write
