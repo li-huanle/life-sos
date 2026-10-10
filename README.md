@@ -1,6 +1,6 @@
-# 出事了先做什么（life-sos）
+# 遇事不慌清单（life-sos）
 
-基于《高性价比人生指南》（[HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter)，CC BY 4.0）的微信小程序。把"出了事怎么办"的建议按场景和先后顺序排成清单。
+基于《高性价比人生指南》（[HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter)，CC BY 4.0）的微信小程序。把"遇到事该怎么办"的建议按场景和先后顺序排成清单。
 
 ## 目录
 

@@ -9,7 +9,7 @@
     "pages/about/about"
   ],
   "window": {
-    "navigationBarTitleText": "出事了先做什么",
+    "navigationBarTitleText": "遇事不慌清单",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#f6f6f4"

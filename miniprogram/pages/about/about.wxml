@@ -1,7 +1,7 @@
 <view class="container">
   <view class="card">
     <view class="h">这是什么</view>
-    <view>把《高性价比人生指南》里「出了事该怎么办」的建议，按场景和先后顺序重新排成清单。</view>
+    <view>把《高性价比人生指南》里「遇到事该怎么办」的建议，按场景和先后顺序重新排成清单。</view>
   </view>
   <view class="card">
     <view class="h">内容出处与许可</view>

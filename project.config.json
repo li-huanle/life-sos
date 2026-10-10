@@ -1,5 +1,5 @@
 {
-  "description": "出事了先做什么 —— 基于《高性价比人生指南》的场景清单小程序",
+  "description": "遇事不慌清单 —— 基于《高性价比人生指南》的场景清单小程序",
   "miniprogramRoot": "miniprogram/",
   "cloudfunctionRoot": "cloudfunctions/",
   "compileType": "miniprogram",

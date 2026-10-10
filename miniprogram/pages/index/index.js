@@ -44,6 +44,6 @@ Page({
   },
 
   onShareAppMessage() {
-    return { title: '出事了先做什么：被裁、被骗、家人去世，照着清单一步步办', path: '/pages/index/index' }
+    return { title: '遇事不慌清单：被裁、被骗、家人去世，照着清单一步步办', path: '/pages/index/index' }
   }
 })

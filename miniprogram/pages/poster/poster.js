@@ -117,7 +117,7 @@ Page({
     ctx.fillText('作者 eternity4719 · CC BY 4.0 · 经改编', PAD, footerTop + 96)
     ctx.fillStyle = '#1f1f1f'
     ctx.font = 'bold 26px sans-serif'
-    ctx.fillText('出事了先做什么', PAD, footerTop + 150)
+    ctx.fillText('遇事不慌清单', PAD, footerTop + 150)
 
     const codePath = await fetchWxacodePath(item.id)
     if (codePath) {
@@ -126,7 +126,7 @@ Page({
     } else {
       ctx.fillStyle = '#8a8a8a'
       ctx.font = '22px sans-serif'
-      ctx.fillText('微信里搜「出事了先做什么」', PAD, footerTop + 186)
+      ctx.fillText('微信里搜「遇事不慌清单」', PAD, footerTop + 186)
     }
     this.canvas = canvas
   },
