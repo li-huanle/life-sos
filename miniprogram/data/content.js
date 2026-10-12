@@ -1,8 +1,8 @@
 // 由 tools/build_data.py 生成，不要手改
 module.exports = {
  "meta": {
-  "upstream_commit": "33362aff50f97f413b22ddfcdb355d2a536a5700",
-  "synced_at": "2026-10-11T00:59:42Z",
+  "upstream_commit": "e4d6db454739a11474b2b0f3c9f5b24c5e70aca7",
+  "synced_at": "2026-10-12T01:18:59Z",
   "source_repo": "https://github.com/eternity4719/HowToLiveBetter"
  },
  "scenes": [
